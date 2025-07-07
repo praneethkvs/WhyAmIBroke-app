@@ -7,8 +7,11 @@ import RangeSlider from '@/components/ui/range-slider';
 import ResultsSection from '@/components/results-section';
 import { HABITS } from '@/lib/constants';
 import { calculateResults, type Habit } from '@/lib/calculations';
+import { useToast } from '@/hooks/use-toast';
 
 export default function Calculator() {
+  const { toast } = useToast();
+  
   const [habits, setHabits] = useState<Habit[]>(
     HABITS.map(habit => ({
       id: habit.id,
@@ -45,7 +48,11 @@ export default function Calculator() {
     console.log('Selected habits:', selectedHabits);
     console.log('All habits:', habits);
     if (selectedHabits.length === 0) {
-      alert('Please select at least one habit and set a price to calculate your financial regret!');
+      toast({
+        title: "No habits selected! 🤔",
+        description: "Please select at least one spending habit and set a price to calculate your financial regret!",
+        variant: "destructive",
+      });
       return;
     }
     setShowResults(true);
