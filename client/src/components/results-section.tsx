@@ -117,7 +117,7 @@ export default function ResultsSection({
               <div className="text-lg font-semibold mb-3 text-yellow-100">
                 You'd be richer by
               </div>
-              <div className="text-5xl font-bold mb-6">
+              <div className="text-5xl font-bold mb-6 text-gray-900 drop-shadow-lg">
                 {formatCurrency(futureValue)}
               </div>
               <div className="bg-white/20 backdrop-blur-sm rounded-xl p-4 inline-block">
