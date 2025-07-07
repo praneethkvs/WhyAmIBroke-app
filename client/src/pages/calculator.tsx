@@ -161,7 +161,7 @@ export default function Calculator() {
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent animate-pulse"></div>
                 <div className="relative z-10">
                   <div className="text-2xl md:text-4xl mb-1 md:mb-2 animate-bounce delay-150">🔥</div>
-                  <div className="text-xl md:text-4xl font-black text-white mb-2 md:mb-3 drop-shadow-lg animate-pulse">
+                  <div className="md:text-4xl font-black text-white mb-2 md:mb-3 drop-shadow-lg animate-pulse text-[24px]">
                     {new Intl.NumberFormat('en-US', {
                       style: 'currency',
                       currency: 'USD',
