@@ -84,12 +84,12 @@ export default function Calculator() {
       </header>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary to-success text-white py-16">
+      <section className="bg-gradient-to-br from-primary to-success text-white py-4">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
             Find Out Why You're Broke 💸
           </h2>
-          <p className="text-xl md:text-2xl font-light mb-8 opacity-90">
+          <p className="text-xl md:text-2xl font mb-4 opacity-90">
             See how your daily spending habits could make you a millionaire instead
           </p>
           <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 inline-block">
@@ -107,7 +107,7 @@ export default function Calculator() {
         <div className="mb-8 md:mb-12">
           <div className="text-center mb-4 md:mb-8">
             <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">
-              Step 1: Pick Your Financial Poison 🍷
+              Step 1: Pick Your Financial Poison
             </h3>
             <p className="text-gray-600 text-sm md:text-base px-4">Select the habits that are draining your bank account</p>
           </div>
@@ -181,20 +181,11 @@ export default function Calculator() {
               </div>
             </div>
             
-            {monthlySpending > 0 && (
+            {yearlySpending > 10000 && (
               <div className="mt-6 text-center">
-                <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-4 md:px-6 py-2 md:py-3 rounded-full font-bold text-sm md:text-lg shadow-lg animate-pulse border-2 border-yellow-300">
-                  <span className="text-lg md:text-xl">⚠️</span>
-                  <span className="hidden sm:inline">FINANCIAL REALITY CHECK INCOMING!</span>
-                  <span className="sm:hidden">REALITY CHECK INCOMING!</span>
-                  <span className="text-lg md:text-xl">⚠️</span>
+                <div className="inline-block bg-black text-red-400 px-4 py-2 rounded-lg font-bold text-sm border border-red-500 animate-pulse">
+                  🚨 DANGER ZONE: {Math.round(yearlySpending / 1000)}K+ PER YEAR! 🚨
                 </div>
-                
-                {yearlySpending > 10000 && (
-                  <div className="mt-4 inline-block bg-black text-red-400 px-4 py-2 rounded-lg font-bold text-sm border border-red-500 animate-pulse">
-                    🚨 DANGER ZONE: {Math.round(yearlySpending / 1000)}K+ PER YEAR! 🚨
-                  </div>
-                )}
               </div>
             )}
           </div>
