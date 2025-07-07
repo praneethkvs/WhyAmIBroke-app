@@ -102,7 +102,7 @@ export default function ResultsSection({
                 <span className="text-xl font-bold text-white">
                   {formatCurrency(monthlySpending)}
                 </span>{" "}
-                Per Month into the S&P 500 index fund at{" "}
+                Per Month into the S&P 500 at{" "}
                 <span className="text-xl font-bold text-white">
                   {returnRate.toFixed(1)}%
                 </span>{" "}
@@ -138,10 +138,10 @@ export default function ResultsSection({
           </h3>
           <div className="h-80">
             <ResponsiveContainer width="100%" height="100%">
-              <BarChart data={chartData}>
+              <BarChart data={chartData} margin={{ top: 20, right: 30, left: 80, bottom: 20 }}>
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="name" />
-                <YAxis tickFormatter={formatCurrency} />
+                <YAxis tickFormatter={formatCurrency} width={70} />
                 <Tooltip
                   formatter={(value) => [
                     formatCurrency(value as number),
