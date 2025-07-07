@@ -50,6 +50,7 @@ export default function ResultsSection({
 
   const handleShare = (platform: string) => {
     const message = `I just found out I'm giving up ${formatCurrency(opportunityCost)} by not investing my daily spending! Check out WhyAmIBroke.com to see your own financial reality check! 💸`;
+    const fullMessage = `${message} ${window.location.href}`;
 
     switch (platform) {
       case "twitter":
@@ -63,7 +64,7 @@ export default function ResultsSection({
         );
         break;
       case "copy":
-        navigator.clipboard.writeText(window.location.href);
+        navigator.clipboard.writeText(fullMessage);
         // You could add a toast notification here
         break;
     }
