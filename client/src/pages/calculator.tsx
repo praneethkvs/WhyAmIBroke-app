@@ -112,7 +112,7 @@ export default function Calculator() {
             <p className="text-gray-600 text-sm md:text-base px-4">Select the habits that are draining your bank account</p>
           </div>
 
-          <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 mb-8">
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 mb-8 auto-rows-fr">
             {HABITS.map(habit => (
               <HabitTile
                 key={habit.id}

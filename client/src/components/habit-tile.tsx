@@ -3,7 +3,7 @@ import { Card } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { cn } from '@/lib/utils';
-import { LucideIcon } from 'lucide-react';
+import { LucideIcon, Check } from 'lucide-react';
 import { FREQUENCY_OPTIONS } from '@/lib/constants';
 
 interface HabitTileProps {
@@ -61,21 +61,32 @@ export default function HabitTile({
   return (
     <Card 
       className={cn(
-        'cursor-pointer transition-all duration-300 hover:shadow-lg hover:scale-105 border-2 p-3 md:p-6',
+        'cursor-pointer transition-all duration-300 hover:shadow-lg hover:scale-105 border-2 p-3 md:p-6 h-full flex flex-col',
         className,
         selected && 'habit-tile-selected ring-4 ring-primary ring-opacity-50 border-primary'
       )}
       onClick={handleClick}
     >
-      <div className="flex items-center space-x-3 mb-3">
-        <div className="w-8 h-8 md:w-12 md:h-12 rounded-full flex items-center justify-center habit-icon">
-          <Icon className="w-4 h-4 md:w-6 md:h-6" />
+      <div className="flex items-start space-x-3 mb-3">
+        <div className="w-8 h-8 md:w-12 md:h-12 rounded-full flex items-center justify-center habit-icon relative">
+          <div className={cn(
+            "absolute inset-0 flex items-center justify-center transition-all duration-500 transform",
+            selected ? "rotate-180 opacity-0" : "rotate-0 opacity-100"
+          )}>
+            <Icon className="w-4 h-4 md:w-6 md:h-6" />
+          </div>
+          <div className={cn(
+            "absolute inset-0 flex items-center justify-center transition-all duration-500 transform",
+            selected ? "rotate-0 opacity-100" : "rotate-180 opacity-0"
+          )}>
+            <Check className="w-4 h-4 md:w-6 md:h-6" />
+          </div>
         </div>
-        <div className="flex-1">
-          <h4 className="font-semibold text-gray-900 text-sm md:text-base">{name}</h4>
+        <div className="flex-1 min-w-0">
+          <h4 className="font-semibold text-gray-900 text-sm md:text-base truncate">{name}</h4>
           <div className="mt-1" onClick={(e) => e.stopPropagation()}>
             <Select value={frequency} onValueChange={handleFrequencyChange}>
-              <SelectTrigger className="w-full h-6 text-xs md:text-sm border-none p-0 focus:ring-0 bg-transparent">
+              <SelectTrigger className="w-full h-auto min-h-[1.5rem] text-xs md:text-sm border-none p-0 focus:ring-0 bg-transparent [&>span]:truncate">
                 <SelectValue />
               </SelectTrigger>
               <SelectContent>
@@ -88,14 +99,9 @@ export default function HabitTile({
             </Select>
           </div>
         </div>
-        {selected && (
-          <div className="w-5 h-5 md:w-6 md:h-6 bg-primary rounded-full flex items-center justify-center">
-            <span className="text-white text-xs md:text-sm">✓</span>
-          </div>
-        )}
       </div>
       
-      <div className="bg-white rounded-lg p-2 md:p-3 mb-2 md:mb-3" onClick={(e) => e.stopPropagation()}>
+      <div className="bg-white rounded-lg p-2 md:p-3 mb-2 md:mb-3 flex-1" onClick={(e) => e.stopPropagation()}>
         <div className="flex items-center space-x-2">
           <span className="text-gray-600 text-sm md:text-base">$</span>
           <Input
@@ -110,7 +116,7 @@ export default function HabitTile({
         </div>
       </div>
       
-      <div className="text-xs text-gray-500 italic leading-tight hidden sm:block">
+      <div className="text-xs text-gray-500 italic leading-tight hidden sm:block mt-auto">
         {boomerCallout}
       </div>
     </Card>
