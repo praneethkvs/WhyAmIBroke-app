@@ -141,12 +141,12 @@ export default function Calculator() {
               
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 max-w-3xl mx-auto">
-              <div className="relative overflow-hidden bg-gradient-to-br from-red-400 via-red-500 to-red-600 rounded-2xl p-6 md:p-8 text-center border-2 border-red-300 shadow-2xl transform hover:scale-105 transition-all duration-300">
+            <div className="grid grid-cols-2 gap-3 md:gap-6 max-w-3xl mx-auto">
+              <div className="relative overflow-hidden bg-gradient-to-br from-red-400 via-red-500 to-red-600 rounded-xl md:rounded-2xl p-4 md:p-8 text-center border-2 border-red-300 shadow-2xl transform hover:scale-105 transition-all duration-300">
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent animate-pulse"></div>
                 <div className="relative z-10">
-                  <div className="text-4xl mb-2 animate-bounce">💸</div>
-                  <div className="text-3xl md:text-4xl font-black text-white mb-3 drop-shadow-lg animate-pulse">
+                  <div className="text-2xl md:text-4xl mb-1 md:mb-2 animate-bounce">💸</div>
+                  <div className="text-xl md:text-4xl font-black text-white mb-2 md:mb-3 drop-shadow-lg animate-pulse">
                     {new Intl.NumberFormat('en-US', {
                       style: 'currency',
                       currency: 'USD',
@@ -154,17 +154,16 @@ export default function Calculator() {
                       maximumFractionDigits: 0
                     }).format(monthlySpending)}
                   </div>
-                  <div className="text-lg md:text-xl text-white font-bold tracking-wide">MONTHLY DRAIN</div>
-                  <div className="text-sm text-red-100 mt-2 font-medium">Money vanishing into thin air!</div>
-                  
+                  <div className="text-sm md:text-xl text-white font-bold tracking-wide">MONTHLY DRAIN</div>
+                  <div className="text-xs md:text-sm text-red-100 mt-1 md:mt-2 font-medium">Money vanishing into thin air!</div>
                 </div>
               </div>
               
-              <div className="relative overflow-hidden bg-gradient-to-br from-orange-400 via-red-500 to-red-600 rounded-2xl p-6 md:p-8 text-center border-2 border-orange-300 shadow-2xl transform hover:scale-105 transition-all duration-300">
+              <div className="relative overflow-hidden bg-gradient-to-br from-orange-400 via-red-500 to-red-600 rounded-xl md:rounded-2xl p-4 md:p-8 text-center border-2 border-orange-300 shadow-2xl transform hover:scale-105 transition-all duration-300">
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent animate-pulse"></div>
                 <div className="relative z-10">
-                  <div className="text-4xl mb-2 animate-bounce delay-150">🔥</div>
-                  <div className="text-3xl md:text-4xl font-black text-white mb-3 drop-shadow-lg animate-pulse">
+                  <div className="text-2xl md:text-4xl mb-1 md:mb-2 animate-bounce delay-150">🔥</div>
+                  <div className="text-xl md:text-4xl font-black text-white mb-2 md:mb-3 drop-shadow-lg animate-pulse">
                     {new Intl.NumberFormat('en-US', {
                       style: 'currency',
                       currency: 'USD',
@@ -172,9 +171,8 @@ export default function Calculator() {
                       maximumFractionDigits: 0
                     }).format(yearlySpending)}
                   </div>
-                  <div className="text-lg md:text-xl text-white font-bold tracking-wide">YEARLY INFERNO</div>
-                  <div className="text-sm text-orange-100 mt-2 font-medium">Your wallet is literally on fire!</div>
-                  
+                  <div className="text-sm md:text-xl text-white font-bold tracking-wide">YEARLY INFERNO</div>
+                  <div className="text-xs md:text-sm text-orange-100 mt-1 md:mt-2 font-medium">Your wallet is literally on fire!</div>
                 </div>
               </div>
             </div>
