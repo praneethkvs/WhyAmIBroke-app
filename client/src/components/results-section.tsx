@@ -124,7 +124,7 @@ export default function ResultsSection({
                 <div className="text-sm font-medium">
                   Fun fact: That's enough to buy{" "}
                   <span className="font-bold">
-                    {getFunFact(opportunityCost)}
+                    {getFunFact(futureValue)}
                   </span>
                   ! 🏆
                 </div>
