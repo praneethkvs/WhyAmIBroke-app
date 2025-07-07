@@ -207,6 +207,8 @@ export default function Calculator() {
                   onChange={setTimeHorizon}
                   label="Investment Time Horizon"
                   displayValue={`${timeHorizon} years`}
+                  minLabel="1 year"
+                  maxLabel="50 years"
                 />
 
                 <RangeSlider
@@ -217,6 +219,8 @@ export default function Calculator() {
                   onChange={setReturnRate}
                   label="Expected Annual Return (S&P 500 avg: 10%)"
                   displayValue={`${returnRate.toFixed(1)}%`}
+                  minLabel="3%"
+                  maxLabel="15%"
                 />
               </div>
 

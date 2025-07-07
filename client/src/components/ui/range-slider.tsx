@@ -9,6 +9,8 @@ interface RangeSliderProps {
   label: string;
   displayValue: string;
   className?: string;
+  minLabel?: string;
+  maxLabel?: string;
 }
 
 export default function RangeSlider({
@@ -19,7 +21,9 @@ export default function RangeSlider({
   onChange,
   label,
   displayValue,
-  className
+  className,
+  minLabel,
+  maxLabel
 }: RangeSliderProps) {
   return (
     <div className={cn('space-y-3', className)}>
@@ -36,8 +40,8 @@ export default function RangeSlider({
           className="w-full h-3 bg-gray-200 rounded-lg appearance-none cursor-pointer slider"
         />
         <div className="flex justify-between text-xs text-gray-500 mt-1">
-          <span>{min}{typeof min === 'number' && min < 10 ? ' year' : ''}</span>
-          <span>{max}{typeof max === 'number' && max < 100 ? ' years' : '%'}</span>
+          <span>{minLabel || min}</span>
+          <span>{maxLabel || max}</span>
         </div>
       </div>
       
