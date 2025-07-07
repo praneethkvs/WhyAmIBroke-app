@@ -53,7 +53,7 @@ export default function HabitTile({
       className={cn(
         'cursor-pointer transition-all duration-300 hover:shadow-lg hover:scale-105 border-2 p-6',
         className,
-        selected && 'habit-tile-selected'
+        selected && 'habit-tile-selected ring-4 ring-primary ring-opacity-50 border-primary'
       )}
       onClick={handleClick}
     >
@@ -65,6 +65,13 @@ export default function HabitTile({
           <h4 className="font-semibold text-gray-900">{name}</h4>
           <p className="text-sm text-gray-600">per {frequency}</p>
         </div>
+        {selected && (
+          <div className="ml-auto">
+            <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center">
+              <span className="text-white text-sm">✓</span>
+            </div>
+          </div>
+        )}
       </div>
       
       <div className="bg-white rounded-lg p-3 mb-3" onClick={(e) => e.stopPropagation()}>

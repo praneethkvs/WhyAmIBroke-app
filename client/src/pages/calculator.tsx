@@ -36,8 +36,11 @@ export default function Calculator() {
 
   const handleCalculate = () => {
     const selectedHabits = habits.filter(habit => habit.selected && habit.price > 0);
+    console.log('Selected habits:', selectedHabits);
+    console.log('All habits:', habits);
     if (selectedHabits.length === 0) {
-      return; // Could add toast notification here
+      alert('Please select at least one habit and set a price to calculate your financial regret!');
+      return;
     }
     setShowResults(true);
   };
