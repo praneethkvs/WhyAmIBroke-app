@@ -45,29 +45,6 @@ export default function ResultsSection({ results, timeHorizon, returnRate }: Res
 
   return (
     <div className="space-y-8">
-      {/* Current Spending Summary */}
-      <Card>
-        <CardContent className="p-8">
-          <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
-            Your Current Spending Habits 📊
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="text-center p-4 bg-gray-50 rounded-xl">
-              <div className="text-2xl font-bold text-secondary">{formatCurrency(monthlySpending)}</div>
-              <div className="text-sm text-gray-600">Monthly Spending</div>
-            </div>
-            <div className="text-center p-4 bg-gray-50 rounded-xl">
-              <div className="text-2xl font-bold text-secondary">{formatCurrency(yearlySpending)}</div>
-              <div className="text-sm text-gray-600">Yearly Spending</div>
-            </div>
-            <div className="text-center p-4 bg-gray-50 rounded-xl">
-              <div className="text-2xl font-bold text-secondary">{formatCurrency(totalSpending)}</div>
-              <div className="text-sm text-gray-600">Total Over {timeHorizon} Years</div>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
-
       {/* Investment Comparison */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <Card>
