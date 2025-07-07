@@ -34,6 +34,12 @@ export default function Calculator() {
     ));
   };
 
+  const handleFrequencyChange = (id: string, frequency: 'daily' | 'weekly' | 'monthly') => {
+    setHabits(prev => prev.map(habit => 
+      habit.id === id ? { ...habit, frequency } : habit
+    ));
+  };
+
   const handleCalculate = () => {
     const selectedHabits = habits.filter(habit => habit.selected && habit.price > 0);
     console.log('Selected habits:', selectedHabits);
@@ -100,14 +106,15 @@ export default function Calculator() {
                 id={habit.id}
                 name={habit.name}
                 icon={habit.icon}
-                frequency={habit.frequency}
                 defaultPrice={habit.defaultPrice}
                 boomerCallout={habit.boomerCallout}
                 className={habit.className}
                 selected={habits.find(h => h.id === habit.id)?.selected || false}
                 price={habits.find(h => h.id === habit.id)?.price || 0}
+                frequency={habits.find(h => h.id === habit.id)?.frequency || habit.frequency}
                 onToggle={handleHabitToggle}
                 onPriceChange={handlePriceChange}
+                onFrequencyChange={handleFrequencyChange}
               />
             ))}
           </div>

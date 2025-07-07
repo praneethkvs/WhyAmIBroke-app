@@ -1,14 +1,16 @@
 import { useState } from 'react';
 import { Card } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { cn } from '@/lib/utils';
 import { LucideIcon } from 'lucide-react';
+import { FREQUENCY_OPTIONS } from '@/lib/constants';
 
 interface HabitTileProps {
   id: string;
   name: string;
   icon: LucideIcon;
-  frequency: string;
+  frequency: 'daily' | 'weekly' | 'monthly';
   defaultPrice: number;
   boomerCallout: string;
   className: string;
@@ -16,6 +18,7 @@ interface HabitTileProps {
   price: number;
   onToggle: (id: string) => void;
   onPriceChange: (id: string, price: number) => void;
+  onFrequencyChange: (id: string, frequency: 'daily' | 'weekly' | 'monthly') => void;
 }
 
 export default function HabitTile({
@@ -29,7 +32,8 @@ export default function HabitTile({
   selected,
   price,
   onToggle,
-  onPriceChange
+  onPriceChange,
+  onFrequencyChange
 }: HabitTileProps) {
   const [inputValue, setInputValue] = useState(price > 0 ? price.toString() : '');
 
@@ -48,6 +52,12 @@ export default function HabitTile({
     onPriceChange(id, numValue);
   };
 
+  const handleFrequencyChange = (newFrequency: 'daily' | 'weekly' | 'monthly') => {
+    onFrequencyChange(id, newFrequency);
+  };
+
+  const frequencyLabel = FREQUENCY_OPTIONS.find(opt => opt.value === frequency)?.label || 'per day';
+
   return (
     <Card 
       className={cn(
@@ -63,7 +73,20 @@ export default function HabitTile({
         </div>
         <div className="flex-1">
           <h4 className="font-semibold text-gray-900 text-sm md:text-base">{name}</h4>
-          <p className="text-xs md:text-sm text-gray-600">per {frequency}</p>
+          <div className="mt-1" onClick={(e) => e.stopPropagation()}>
+            <Select value={frequency} onValueChange={handleFrequencyChange}>
+              <SelectTrigger className="w-full h-6 text-xs md:text-sm border-none p-0 focus:ring-0 bg-transparent">
+                <SelectValue />
+              </SelectTrigger>
+              <SelectContent>
+                {FREQUENCY_OPTIONS.map(option => (
+                  <SelectItem key={option.value} value={option.value}>
+                    {option.label}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
         </div>
         {selected && (
           <div className="w-5 h-5 md:w-6 md:h-6 bg-primary rounded-full flex items-center justify-center">

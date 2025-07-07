@@ -57,6 +57,12 @@ export const HABITS = [
   }
 ] as const;
 
+export const FREQUENCY_OPTIONS = [
+  { value: 'daily', label: 'per day' },
+  { value: 'weekly', label: 'per week' },
+  { value: 'monthly', label: 'per month' }
+] as const;
+
 export const FREQUENCY_MULTIPLIERS = {
   daily: 30,
   weekly: 4.33,
