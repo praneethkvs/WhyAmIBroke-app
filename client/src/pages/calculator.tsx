@@ -143,33 +143,60 @@ export default function Calculator() {
               <p className="text-gray-600 text-sm md:text-base px-4">Real-time calculation based on your selected habits</p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 max-w-2xl mx-auto">
-              <div className="bg-gradient-to-r from-secondary/10 to-secondary/20 rounded-xl p-4 md:p-6 text-center border border-secondary/20">
-                <div className="text-2xl md:text-3xl font-bold text-secondary mb-2">
-                  {new Intl.NumberFormat('en-US', {
-                    style: 'currency',
-                    currency: 'USD',
-                    minimumFractionDigits: 0,
-                    maximumFractionDigits: 0
-                  }).format(monthlySpending)}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 max-w-3xl mx-auto">
+              <div className="relative overflow-hidden bg-gradient-to-br from-red-400 via-red-500 to-red-600 rounded-2xl p-6 md:p-8 text-center border-2 border-red-300 shadow-2xl transform hover:scale-105 transition-all duration-300">
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent animate-pulse"></div>
+                <div className="relative z-10">
+                  <div className="text-4xl mb-2 animate-bounce">💸</div>
+                  <div className="text-3xl md:text-4xl font-black text-white mb-3 drop-shadow-lg animate-pulse">
+                    {new Intl.NumberFormat('en-US', {
+                      style: 'currency',
+                      currency: 'USD',
+                      minimumFractionDigits: 0,
+                      maximumFractionDigits: 0
+                    }).format(monthlySpending)}
+                  </div>
+                  <div className="text-lg md:text-xl text-white font-bold tracking-wide">MONTHLY DRAIN</div>
+                  <div className="text-sm text-red-100 mt-2 font-medium">Money vanishing into thin air!</div>
+                  <div className="absolute -top-2 -right-2 text-6xl opacity-20 animate-spin-slow">💰</div>
                 </div>
-                <div className="text-sm md:text-base text-gray-600 font-medium">Monthly Spending</div>
-                <div className="text-xs text-gray-500 mt-1">That's real money leaving your account! 💸</div>
               </div>
               
-              <div className="bg-gradient-to-r from-primary/10 to-primary/20 rounded-xl p-4 md:p-6 text-center border border-primary/20">
-                <div className="text-2xl md:text-3xl font-bold text-primary mb-2">
-                  {new Intl.NumberFormat('en-US', {
-                    style: 'currency',
-                    currency: 'USD',
-                    minimumFractionDigits: 0,
-                    maximumFractionDigits: 0
-                  }).format(yearlySpending)}
+              <div className="relative overflow-hidden bg-gradient-to-br from-orange-400 via-red-500 to-red-600 rounded-2xl p-6 md:p-8 text-center border-2 border-orange-300 shadow-2xl transform hover:scale-105 transition-all duration-300">
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent animate-pulse"></div>
+                <div className="relative z-10">
+                  <div className="text-4xl mb-2 animate-bounce delay-150">🔥</div>
+                  <div className="text-3xl md:text-4xl font-black text-white mb-3 drop-shadow-lg animate-pulse">
+                    {new Intl.NumberFormat('en-US', {
+                      style: 'currency',
+                      currency: 'USD',
+                      minimumFractionDigits: 0,
+                      maximumFractionDigits: 0
+                    }).format(yearlySpending)}
+                  </div>
+                  <div className="text-lg md:text-xl text-white font-bold tracking-wide">YEARLY INFERNO</div>
+                  <div className="text-sm text-orange-100 mt-2 font-medium">Your wallet is literally on fire!</div>
+                  <div className="absolute -bottom-2 -left-2 text-6xl opacity-20 animate-bounce">💀</div>
                 </div>
-                <div className="text-sm md:text-base text-gray-600 font-medium">Yearly Spending</div>
-                <div className="text-xs text-gray-500 mt-1">Imagine investing this instead! 📈</div>
               </div>
             </div>
+            
+            {monthlySpending > 0 && (
+              <div className="mt-6 text-center">
+                <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-4 md:px-6 py-2 md:py-3 rounded-full font-bold text-sm md:text-lg shadow-lg animate-pulse border-2 border-yellow-300">
+                  <span className="text-lg md:text-xl">⚠️</span>
+                  <span className="hidden sm:inline">FINANCIAL REALITY CHECK INCOMING!</span>
+                  <span className="sm:hidden">REALITY CHECK INCOMING!</span>
+                  <span className="text-lg md:text-xl">⚠️</span>
+                </div>
+                
+                {yearlySpending > 10000 && (
+                  <div className="mt-4 inline-block bg-black text-red-400 px-4 py-2 rounded-lg font-bold text-sm border border-red-500 animate-pulse">
+                    🚨 DANGER ZONE: {Math.round(yearlySpending / 1000)}K+ PER YEAR! 🚨
+                  </div>
+                )}
+              </div>
+            )}
           </div>
         )}
 
