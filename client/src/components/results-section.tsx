@@ -95,55 +95,38 @@ export default function ResultsSection({
           </CardContent>
         </Card>
 
-        <Card>
+        <Card className="bg-gradient-to-r from-secondary to-primary text-white">
           <CardContent className="p-8">
-            <div className="text-center mb-6">
-              <h4 className="text-xl font-bold text-gray-900">
-                📈 If Instead You Invested
-              </h4>
-              <p className="text-gray-600 text-sm">
-                If You Invested{" "}
-                <span className="text-lg font-bold text-gray-900">{formatCurrency(monthlySpending)}</span>{" "}
-                Per Month into the S&P 500 index fund at{" "}
-                <span className="text-lg font-bold text-gray-900">{returnRate.toFixed(1)}%</span>{" "}
-                annual rate of return for{" "}
-                <span className="text-lg font-bold text-gray-900">{timeHorizon} years</span>
-              </p>
-            </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-success mb-2">
-                {formatCurrency(futureValue)}
-              </div>
-              <div className="text-sm text-gray-500">
-                Compound interest magic ✨
+              <h3 className="text-2xl font-bold mb-4">
+                📈 If Instead You Invested
+              </h3>
+              <p className="text-lg opacity-90 mb-6">
+                If You Invested{" "}
+                <span className="text-xl font-bold text-white">{formatCurrency(monthlySpending)}</span>{" "}
+                Per Month into the S&P 500 index fund at{" "}
+                <span className="text-xl font-bold text-white">{returnRate.toFixed(1)}%</span>{" "}
+                annual rate of return for{" "}
+                <span className="text-xl font-bold text-white">{timeHorizon} years</span>
+              </p>
+              <div className="text-5xl font-bold mb-2">{formatCurrency(futureValue)}</div>
+              <p className="text-lg opacity-90 mb-4">
+                Your Opportunity Cost: {formatCurrency(opportunityCost)}
+              </p>
+              <p className="text-lg opacity-90 mb-6">
+                That's how much money you're giving up by not investing!
+              </p>
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 inline-block">
+                <p className="text-sm">
+                  Fun fact: That's enough to buy{" "}
+                  <span className="font-bold">{getFunFact(opportunityCost)}</span>
+                  ! 🏝️
+                </p>
               </div>
             </div>
           </CardContent>
         </Card>
       </div>
-      {/* Opportunity Cost */}
-      <Card className="bg-gradient-to-r from-secondary to-primary text-white">
-        <CardContent className="p-8">
-          <div className="text-center">
-            <h3 className="text-2xl font-bold mb-4">
-              Your Opportunity Cost 😱
-            </h3>
-            <div className="text-5xl font-bold mb-2">
-              {formatCurrency(opportunityCost)}
-            </div>
-            <p className="text-lg opacity-90">
-              That's how much money you're giving up by not investing!
-            </p>
-            <div className="mt-6 bg-white/10 backdrop-blur-sm rounded-xl p-4 inline-block">
-              <p className="text-sm">
-                Fun fact: That's enough to buy{" "}
-                <span className="font-bold">{getFunFact(opportunityCost)}</span>
-                ! 🏝️
-              </p>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
       {/* Chart Visualization */}
       <Card>
         <CardContent className="p-8">
