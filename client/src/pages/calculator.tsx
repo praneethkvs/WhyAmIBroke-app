@@ -82,18 +82,18 @@ export default function Calculator() {
       </section>
 
       {/* Calculator App */}
-      <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-12">
         
         {/* Step 1: Habit Selection */}
-        <div className="mb-12">
-          <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold text-gray-900 mb-2">
+        <div className="mb-8 md:mb-12">
+          <div className="text-center mb-4 md:mb-8">
+            <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">
               Step 1: Pick Your Financial Poison 🍷
             </h3>
-            <p className="text-gray-600">Select the habits that are draining your bank account</p>
+            <p className="text-gray-600 text-sm md:text-base px-4">Select the habits that are draining your bank account</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 mb-8">
             {HABITS.map(habit => (
               <HabitTile
                 key={habit.id}
@@ -114,10 +114,10 @@ export default function Calculator() {
         </div>
 
         {/* Step 2: Time Horizon & Settings */}
-        <div className="mb-12">
+        <div className="mb-8 md:mb-12">
           <Card>
-            <CardContent className="p-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+            <CardContent className="p-4 md:p-8">
+              <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-4 md:mb-6 text-center">
                 Step 2: How Long Are You Willing to Wait? ⏰
               </h3>
               
@@ -142,10 +142,10 @@ export default function Calculator() {
                 />
               </div>
 
-              <div className="mt-8 text-center">
+              <div className="mt-6 md:mt-8 text-center">
                 <Button
                   onClick={handleCalculate}
-                  className="bg-primary hover:bg-primary/90 text-white font-semibold py-4 px-8 rounded-xl text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
+                  className="bg-primary hover:bg-primary/90 text-white font-semibold py-3 md:py-4 px-6 md:px-8 rounded-xl text-base md:text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
                   size="lg"
                 >
                   Calculate My Financial Regret 💸

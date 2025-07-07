@@ -51,45 +51,43 @@ export default function HabitTile({
   return (
     <Card 
       className={cn(
-        'cursor-pointer transition-all duration-300 hover:shadow-lg hover:scale-105 border-2 p-6',
+        'cursor-pointer transition-all duration-300 hover:shadow-lg hover:scale-105 border-2 p-3 md:p-6',
         className,
         selected && 'habit-tile-selected ring-4 ring-primary ring-opacity-50 border-primary'
       )}
       onClick={handleClick}
     >
-      <div className="flex items-center space-x-4 mb-4">
-        <div className="w-12 h-12 rounded-full flex items-center justify-center habit-icon">
-          <Icon className="w-6 h-6" />
+      <div className="flex items-center space-x-3 mb-3">
+        <div className="w-8 h-8 md:w-12 md:h-12 rounded-full flex items-center justify-center habit-icon">
+          <Icon className="w-4 h-4 md:w-6 md:h-6" />
         </div>
-        <div>
-          <h4 className="font-semibold text-gray-900">{name}</h4>
-          <p className="text-sm text-gray-600">per {frequency}</p>
+        <div className="flex-1">
+          <h4 className="font-semibold text-gray-900 text-sm md:text-base">{name}</h4>
+          <p className="text-xs md:text-sm text-gray-600">per {frequency}</p>
         </div>
         {selected && (
-          <div className="ml-auto">
-            <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center">
-              <span className="text-white text-sm">✓</span>
-            </div>
+          <div className="w-5 h-5 md:w-6 md:h-6 bg-primary rounded-full flex items-center justify-center">
+            <span className="text-white text-xs md:text-sm">✓</span>
           </div>
         )}
       </div>
       
-      <div className="bg-white rounded-lg p-3 mb-3" onClick={(e) => e.stopPropagation()}>
+      <div className="bg-white rounded-lg p-2 md:p-3 mb-2 md:mb-3" onClick={(e) => e.stopPropagation()}>
         <div className="flex items-center space-x-2">
-          <span className="text-gray-600">$</span>
+          <span className="text-gray-600 text-sm md:text-base">$</span>
           <Input
             type="number"
             placeholder={defaultPrice.toFixed(2)}
             value={inputValue}
             onChange={handleInputChange}
-            className="border-none focus:ring-0 text-lg p-0 h-auto"
+            className="border-none focus:ring-0 text-base md:text-lg p-0 h-auto"
             step="0.01"
             min="0"
           />
         </div>
       </div>
       
-      <div className="text-xs text-gray-500 italic">
+      <div className="text-xs text-gray-500 italic leading-tight hidden sm:block">
         {boomerCallout}
       </div>
     </Card>
