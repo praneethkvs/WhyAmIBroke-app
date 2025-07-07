@@ -49,7 +49,7 @@ export default function ResultsSection({
   ];
 
   const handleShare = (platform: string) => {
-    const message = `I just found out I'm giving up ${formatCurrency(opportunityCost)} by not investing my daily spending! Check out WhyAmIBroke.com to see your own financial reality check! 💸`;
+    const message = `I just found out I could have ${formatCurrency(futureValue)} by investing my daily spending instead! Check out WhyAmIBroke.com to see your own financial reality check! 💸`;
     const fullMessage = `${message} ${window.location.href}`;
 
     switch (platform) {
