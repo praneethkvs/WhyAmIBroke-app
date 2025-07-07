@@ -135,7 +135,7 @@ export default function Calculator() {
         {habits.some(h => h.selected && h.price > 0) && (
           <div className="mb-8 md:mb-12">
             <div className="text-center mb-4 md:mb-6">
-              <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">Show the Damage 💸</h3>
+              <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">Here's the Damage! 💸</h3>
               
             </div>
             
