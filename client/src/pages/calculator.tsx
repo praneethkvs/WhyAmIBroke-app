@@ -140,7 +140,7 @@ export default function Calculator() {
               <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">
                 Your Current Spending Habits 📊
               </h3>
-              <p className="text-gray-600 text-sm md:text-base px-4">Real-time calculation based on your selected habits</p>
+              
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 max-w-3xl mx-auto">
