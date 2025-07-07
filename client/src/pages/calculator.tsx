@@ -158,7 +158,7 @@ export default function Calculator() {
                   </div>
                   <div className="text-lg md:text-xl text-white font-bold tracking-wide">MONTHLY DRAIN</div>
                   <div className="text-sm text-red-100 mt-2 font-medium">Money vanishing into thin air!</div>
-                  <div className="absolute -top-2 -right-2 text-6xl opacity-20 animate-spin-slow">💰</div>
+                  
                 </div>
               </div>
               
@@ -176,7 +176,7 @@ export default function Calculator() {
                   </div>
                   <div className="text-lg md:text-xl text-white font-bold tracking-wide">YEARLY INFERNO</div>
                   <div className="text-sm text-orange-100 mt-2 font-medium">Your wallet is literally on fire!</div>
-                  <div className="absolute -bottom-2 -left-2 text-6xl opacity-20 animate-bounce">💀</div>
+                  
                 </div>
               </div>
             </div>
