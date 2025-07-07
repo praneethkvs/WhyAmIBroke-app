@@ -189,9 +189,7 @@ export default function Calculator() {
         <div className="mb-8 md:mb-12">
           <Card>
             <CardContent className="p-4 md:p-8">
-              <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-4 md:mb-6 text-center">
-                Step 2: How Long Are You Willing to Wait? ⏰
-              </h3>
+              <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-4 md:mb-6 text-center">Step 2: If you let Compounding Cook... 🍲</h3>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <RangeSlider
