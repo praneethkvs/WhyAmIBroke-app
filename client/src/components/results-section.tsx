@@ -95,33 +95,39 @@ export default function ResultsSection({
           </CardContent>
         </Card>
 
-        <Card className="bg-gradient-to-r from-secondary to-primary text-white">
+        <Card className="bg-gradient-to-br from-yellow-400 via-amber-500 to-yellow-600 text-white shadow-2xl">
           <CardContent className="p-8">
             <div className="text-center">
               <h3 className="text-2xl font-bold mb-4">
-                📈 If Instead You Invested
+                ✨ Instead If You Invested
               </h3>
-              <p className="text-lg opacity-90 mb-6">
-                If You Invested{" "}
-                <span className="text-xl font-bold text-white">{formatCurrency(monthlySpending)}</span>{" "}
+              <div className="text-lg opacity-90 mb-6">
+                <span className="text-xl font-bold text-white">
+                  {formatCurrency(monthlySpending)}
+                </span>{" "}
                 Per Month into the S&P 500 index fund at{" "}
-                <span className="text-xl font-bold text-white">{returnRate.toFixed(1)}%</span>{" "}
+                <span className="text-xl font-bold text-white">
+                  {returnRate.toFixed(1)}%
+                </span>{" "}
                 annual rate of return for{" "}
-                <span className="text-xl font-bold text-white">{timeHorizon} years</span>
-              </p>
-              <div className="text-5xl font-bold mb-2">{formatCurrency(futureValue)}</div>
-              <p className="text-lg opacity-90 mb-4">
-                Your Opportunity Cost: {formatCurrency(opportunityCost)}
-              </p>
-              <p className="text-lg opacity-90 mb-6">
-                That's how much money you're giving up by not investing!
-              </p>
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 inline-block">
-                <p className="text-sm">
+                <span className="text-xl font-bold text-white">
+                  {timeHorizon} years.{" "}
+                </span>
+              </div>
+              <div className="text-lg font-semibold mb-3 text-yellow-100">
+                You'd be richer by
+              </div>
+              <div className="text-5xl font-bold mb-6">
+                {formatCurrency(futureValue)}
+              </div>
+              <div className="bg-white/20 backdrop-blur-sm rounded-xl p-4 inline-block">
+                <div className="text-sm font-medium">
                   Fun fact: That's enough to buy{" "}
-                  <span className="font-bold">{getFunFact(opportunityCost)}</span>
-                  ! 🏝️
-                </p>
+                  <span className="font-bold">
+                    {getFunFact(opportunityCost)}
+                  </span>
+                  ! 🏆
+                </div>
               </div>
             </div>
           </CardContent>
