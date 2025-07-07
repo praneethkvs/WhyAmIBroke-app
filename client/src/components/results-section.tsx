@@ -69,7 +69,7 @@ export default function ResultsSection({ results, timeHorizon, returnRate }: Res
               <div className="w-16 h-16 bg-success/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <div className="text-success text-2xl">📈</div>
               </div>
-              <h4 className="text-xl font-bold text-gray-900">If You Invested Instead</h4>
+              <h4 className="text-xl font-bold text-gray-900">📈 If Instead You Invested</h4>
               <p className="text-gray-600 text-sm">If You Invested {formatCurrency(monthlySpending)} Per Month into the S&P 500 index fund at {returnRate.toFixed(1)}% annual rate of return for {timeHorizon} years</p>
             </div>
             <div className="text-center">
@@ -79,7 +79,6 @@ export default function ResultsSection({ results, timeHorizon, returnRate }: Res
           </CardContent>
         </Card>
       </div>
-
       {/* Opportunity Cost */}
       <Card className="bg-gradient-to-r from-secondary to-primary text-white">
         <CardContent className="p-8">
@@ -99,7 +98,6 @@ export default function ResultsSection({ results, timeHorizon, returnRate }: Res
           </div>
         </CardContent>
       </Card>
-
       {/* Chart Visualization */}
       <Card>
         <CardContent className="p-8">
@@ -119,7 +117,6 @@ export default function ResultsSection({ results, timeHorizon, returnRate }: Res
           </div>
         </CardContent>
       </Card>
-
       {/* Social Sharing */}
       <Card>
         <CardContent className="p-8">
