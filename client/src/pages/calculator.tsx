@@ -82,7 +82,6 @@ export default function Calculator() {
           </div>
         </div>
       </header>
-
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-primary to-success text-white py-4">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -99,7 +98,6 @@ export default function Calculator() {
           </div>
         </div>
       </section>
-
       {/* Calculator App */}
       <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-12">
         
@@ -246,7 +244,6 @@ export default function Calculator() {
           />
         )}
       </main>
-
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-12">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -255,9 +252,7 @@ export default function Calculator() {
               <PiggyBank className="text-primary text-2xl" />
               <h3 className="text-xl font-bold">WhyAmIBroke.com</h3>
             </div>
-            <p className="text-gray-400 mb-6">
-              Making financial awareness fun (and slightly traumatic) since 2024
-            </p>
+            <p className="text-gray-400 mb-6">Making financial awareness fun (and slightly traumatic) since 2025</p>
             <div className="text-sm text-gray-500">
               <p className="mb-2">
                 ⚠️ <strong>Disclaimer:</strong> This calculator is for entertainment and educational purposes. 
