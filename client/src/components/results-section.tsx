@@ -70,7 +70,7 @@ export default function ResultsSection({ results, timeHorizon, returnRate }: Res
                 <div className="text-success text-2xl">📈</div>
               </div>
               <h4 className="text-xl font-bold text-gray-900">If You Invested Instead</h4>
-              <p className="text-gray-600 text-sm">S&P 500 index fund at {returnRate.toFixed(1)}% annually</p>
+              <p className="text-gray-600 text-sm">If You Invested {formatCurrency(monthlySpending)} Per Month into the S&P 500 index fund at {returnRate.toFixed(1)}% annual rate of return for {timeHorizon} years</p>
             </div>
             <div className="text-center">
               <div className="text-4xl font-bold text-success mb-2">{formatCurrency(futureValue)}</div>
