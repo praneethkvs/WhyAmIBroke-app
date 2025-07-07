@@ -53,6 +53,19 @@ export default function Calculator() {
 
   const results = calculateResults(habits, timeHorizon, returnRate);
 
+  // Calculate real-time spending for display
+  const calculateRealTimeSpending = () => {
+    return habits
+      .filter(habit => habit.selected && habit.price > 0)
+      .reduce((total, habit) => {
+        const multiplier = habit.frequency === 'daily' ? 30 : habit.frequency === 'weekly' ? 4.33 : 1;
+        return total + (habit.price * multiplier);
+      }, 0);
+  };
+
+  const monthlySpending = calculateRealTimeSpending();
+  const yearlySpending = monthlySpending * 12;
+
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
@@ -119,6 +132,46 @@ export default function Calculator() {
             ))}
           </div>
         </div>
+
+        {/* Real-time Spending Summary */}
+        {habits.some(h => h.selected && h.price > 0) && (
+          <div className="mb-8 md:mb-12">
+            <div className="text-center mb-4 md:mb-6">
+              <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">
+                Your Current Spending Habits 📊
+              </h3>
+              <p className="text-gray-600 text-sm md:text-base px-4">Real-time calculation based on your selected habits</p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 max-w-2xl mx-auto">
+              <div className="bg-gradient-to-r from-secondary/10 to-secondary/20 rounded-xl p-4 md:p-6 text-center border border-secondary/20">
+                <div className="text-2xl md:text-3xl font-bold text-secondary mb-2">
+                  {new Intl.NumberFormat('en-US', {
+                    style: 'currency',
+                    currency: 'USD',
+                    minimumFractionDigits: 0,
+                    maximumFractionDigits: 0
+                  }).format(monthlySpending)}
+                </div>
+                <div className="text-sm md:text-base text-gray-600 font-medium">Monthly Spending</div>
+                <div className="text-xs text-gray-500 mt-1">That's real money leaving your account! 💸</div>
+              </div>
+              
+              <div className="bg-gradient-to-r from-primary/10 to-primary/20 rounded-xl p-4 md:p-6 text-center border border-primary/20">
+                <div className="text-2xl md:text-3xl font-bold text-primary mb-2">
+                  {new Intl.NumberFormat('en-US', {
+                    style: 'currency',
+                    currency: 'USD',
+                    minimumFractionDigits: 0,
+                    maximumFractionDigits: 0
+                  }).format(yearlySpending)}
+                </div>
+                <div className="text-sm md:text-base text-gray-600 font-medium">Yearly Spending</div>
+                <div className="text-xs text-gray-500 mt-1">Imagine investing this instead! 📈</div>
+              </div>
+            </div>
+          </div>
+        )}
 
         {/* Step 2: Time Horizon & Settings */}
         <div className="mb-8 md:mb-12">
